@@ -30,11 +30,13 @@ python app/app.py
 ## Instructions
 
 **Database & Models**
+
 The focus of this lecture is using the `Flask` and `Flask-SQLAlchemy` API, so you shouldn't spend any time implementing or seeding database models. This has already been done for you in the installation steps above. One thing you might want to cover is how we connect our database (see `app/app/py`, lines 5-8) and set up our models off of `db.Model` instead of the declarative base (see `app/models.py`, lines 3, 20, & 43). This syntax is slightly different because we are using `Flask-SQLAlchemy` instead of just `SQLAlchemy`. You can share this [documentation](https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/#quickstart) with the fellows to show this.
 
 You should also point out that we need to define a `serialize` method in order to return data from our models as JSON. This too has already been done for you, but you should point out that the current solution is not the most scalable. There are packages that can help handle serialization, like `SQLAlchemy-serializer` and `marshmallow`, that we may want to use in the future.
 
 **Demoing**
+
 For the remainder of the lecture, focus on writing the API routes. When a route handles more than one method, write and demo each method one at a time before extending the route to handle an additional method. For example, `/animals` handles both `GET` and `POST` methods. Write and demo the `GET` route, then add control flow to handle the `POST` method.
 
 You can check `app/solutions.py` for rough implementations of these, but remember that fellows should be doing most of the work during demos. If they need guidance, some helpful documentation to pull up for them include:
@@ -46,4 +48,5 @@ You can check `app/solutions.py` for rough implementations of these, but remembe
 - [Flask: Quick Start, The Request Object](https://flask.palletsprojects.com/en/1.1.x/quickstart/#the-request-object) *has a form data example
 
 **Extension**
+
 Once you are done, talk about how the API you wrote can be improved. Is it easy to read? Is it resuable? `app/solutions.py` sure as heck isn't! For example, some of the database work can be extracted into helper methods so the routes are easier to read. Also, the routes don't send variable statuses relative to the actions nor do they handle any errors. You can work on fixing these things if there is time.
